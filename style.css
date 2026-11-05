@@ -47,22 +47,65 @@ a { color: var(--gold); }
 .wordmark .naughty { display: block; font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-weight: 500; font-size: 64px; }
 .wordmark .or { display: block; font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-size: 22px; color: var(--muted); margin: 4px 0; }
 .wordmark .heist { display: block; font-family: "Bodoni Moda", Georgia, serif; font-weight: 800; font-size: 56px; letter-spacing: 0.18em; padding-left: 0.18em; }
-.tagline { font-size: 20px; color: var(--ivory); margin: 18px 0 8px; }
-.meta { font-size: 14px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; }
-.soon {
-  display: inline-block; margin-top: 26px; padding: 10px 22px; border: 1px solid var(--gold);
-  border-radius: 999px; color: var(--gold); font-size: 16px;
+.hero .eyebrow { margin: 26px 0 8px; color: var(--gold); line-height: 1.5; }
+.headline {
+  font-family: "Bodoni Moda", Georgia, serif; font-weight: 700; color: var(--ivory);
+  font-size: 44px; line-height: 1.15; margin: 0 auto 18px; max-width: 720px;
 }
+.lede { font-size: 20px; margin: 0 auto 14px; max-width: 620px; }
+.meta { font-size: 14px; line-height: 1.8; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase; margin: 22px 0; }
+.soon-line { color: var(--muted); font-size: 17px; margin: 18px 0; }
+.cta {
+  display: inline-block; padding: 14px 34px; border-radius: 999px; background: var(--gold); color: var(--base);
+  font-weight: 700; font-size: 18px; text-decoration: none;
+}
+.cta:hover { background: var(--ivory); }
 
 section { padding: 36px 0; border-top: 1px solid var(--line); }
-h2 { font-family: "Bodoni Moda", Georgia, serif; color: var(--gold); font-weight: 700; font-size: 30px; margin: 0 0 12px; }
-h3 { font-family: "Bodoni Moda", Georgia, serif; color: var(--gold); font-weight: 700; font-size: 22px; margin: 0 0 6px; }
+h2 { font-family: "Bodoni Moda", Georgia, serif; color: var(--gold); font-weight: 700; font-size: 30px; line-height: 1.2; margin: 0 0 12px; }
+h3 { font-family: "Bodoni Moda", Georgia, serif; color: var(--gold); font-weight: 700; font-size: 22px; line-height: 1.25; margin: 0 0 6px; }
 
 .modes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .mode { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
 .mode .players { color: var(--muted); font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+.mode p { margin: 0 0 12px; }
+.mode p:last-child { margin-bottom: 0; }
+
+.hook { font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-weight: 500; font-size: 20px; line-height: 1.35; color: var(--ivory); }
+.kicker { font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-weight: 500; font-size: 22px; line-height: 1.35; color: var(--gold); }
+.mode .kicker { font-size: 19px; }
+.aside { font-style: italic; color: var(--muted); }
+
+.crimes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 20px 0; }
+.crime { border-left: 2px solid var(--gold); padding: 2px 0 2px 16px; }
+.crime p { margin: 0; }
+
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 16px 0 20px; }
+.steps li { counter-increment: step; position: relative; padding-left: 58px; margin: 18px 0; min-height: 42px; }
+.steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 0; width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid var(--gold); color: var(--gold); text-align: center; line-height: 40px;
+  font-family: "Bodoni Moda", Georgia, serif; font-weight: 700; font-size: 20px;
+}
+
+.features { list-style: none; padding: 0; margin: 0; }
+.features li { position: relative; padding-left: 28px; margin: 12px 0; }
+.features li::before { content: "◆"; position: absolute; left: 0; top: 1px; color: var(--gold); font-size: 14px; }
+
+.final {
+  text-align: center; padding: 56px 24px; border-top: 1px solid var(--line);
+  background: radial-gradient(ellipse at bottom, var(--burgundy) 0%, var(--base) 70%);
+}
+.final p { margin: 0 auto 12px; max-width: 620px; }
+.final .cta { margin-top: 14px; }
+.final .soon-line { margin-top: 18px; }
+.foot-tag { font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-size: 20px; color: var(--gold); margin: 0 0 14px; }
+
 @media (max-width: 640px) {
   .modes { grid-template-columns: 1fr; }
+  .crimes { grid-template-columns: 1fr; }
+  .headline { font-size: 34px; }
+  .lede { font-size: 18px; }
   .wordmark .naughty { font-size: 52px; }
   .wordmark .heist { font-size: 44px; }
 }
